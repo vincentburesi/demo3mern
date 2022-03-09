@@ -4,8 +4,8 @@
   "description": "CRUD Project for 3MERN class - Demonstration purpose",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js --env=dev",
-    "prod": "node index.js --env=prod",
+    "dev": "nodemon index.js --env=dev --db='mongodb+srv://dbuser:supinfo@cluster0.kgu0c.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'",
+    "prod": "node index.js --env=prod --db='mongodb+srv://dbuser:supinfo@cluster0.kgu0c.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -13,10 +13,13 @@
     "teaching",
     "demo"
   ],
+  "type": "module",
   "author": "Vincent Buresi",
   "license": "WTFPL",
   "dependencies": {
+    "body-parser": "^1.19.2",
     "express": "^4.17.3",
-    "mongoose": "^6.2.4"
+    "mongoose": "^6.2.4",
+    "yargs": "^17.3.1"
   }
 }
