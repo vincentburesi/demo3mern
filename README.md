@@ -13,3 +13,9 @@ $ npm install
 $ npm install -g nodemon
 $ npm run dev
 ```
+
+## How to run tests
+```
+$ npm install -g mocha
+$ npm run test
+```

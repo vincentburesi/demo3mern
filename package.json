@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon index.js --env=dev --db=\"mongodb+srv://dbuser:supinfo@cluster0.kgu0c.mongodb.net/myFirstDatabase?retryWrites=true&w=majority\"",
     "prod": "node index.js --env=prod --db=\"mongodb+srv://dbuser:supinfo@cluster0.kgu0c.mongodb.net/myFirstDatabase?retryWrites=true&w=majority\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test"
   },
   "keywords": [
     "CRUD",
@@ -20,6 +20,7 @@
     "body-parser": "^1.19.2",
     "express": "^4.17.3",
     "mongoose": "^6.2.4",
+    "supertest": "^6.2.2",
     "yargs": "^17.3.1"
   }
 }
