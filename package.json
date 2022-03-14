@@ -4,9 +4,9 @@
   "description": "CRUD Project for 3MERN class - Demonstration purpose",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js --env=dev --db=\"mongodb+srv://dbuser:supinfo@cluster0.kgu0c.mongodb.net/myFirstDatabase?retryWrites=true&w=majority\"",
-    "prod": "node index.js --env=prod --db=\"mongodb+srv://dbuser:supinfo@cluster0.kgu0c.mongodb.net/myFirstDatabase?retryWrites=true&w=majority\"",
-    "test": "mocha test"
+    "dev": "nodemon index.js --env=dev --db=\"mongodb+srv://dbuser:supinfo@cluster0.kgu0c.mongodb.net/crud_dev?retryWrites=true&w=majority\"",
+    "prod": "node index.js --env=prod --db=\"mongodb+srv://dbuser:supinfo@cluster0.kgu0c.mongodb.net/crud_prod?retryWrites=true&w=majority\"",
+    "test": "mocha test --timeout=10000 --exit --env=test --db=\"mongodb+srv://dbuser:supinfo@cluster0.kgu0c.mongodb.net/crud_test?retryWrites=true&w=majority\""
   },
   "keywords": [
     "CRUD",
@@ -18,6 +18,7 @@
   "license": "WTFPL",
   "dependencies": {
     "body-parser": "^1.19.2",
+    "chai": "^4.3.6",
     "express": "^4.17.3",
     "mongoose": "^6.2.4",
     "supertest": "^6.2.2",

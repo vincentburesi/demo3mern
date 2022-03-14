@@ -1,28 +1,53 @@
-import express from 'express'
-import assert from 'assert'
+import chai from 'chai'
 import request from 'supertest'
+import db from './db.js'
+import app from './app.js'
 
-// Dummy code
-const app = express()
+const assert = chai.assert
 
-app.get('/user', function(req, res) {
-  res.status(200).json({ name: 'john' });
-});
-
-// Dummy test
-describe('dummy', () => {
-  it('should work', () => {
-    assert(true)
+// Clean DB before each test
+beforeEach((done) => {
+  console.log("Dropping articles...")
+  db.collections.articles.drop().then(() => {
+    console.log("Dropped")
+    done()
+  }).catch((err) => {
+    if (err.code == 26)
+      console.log("Skipped")
+    else
+      console.log(err.codeName)
+    done()
   })
+})
 
-  it('network ?', () => {
+describe('GET /articles', () => {
+  it('list articles', (done) => {
     request(app)
-      .get('/user')
+      .get('/articles')
       .expect('Content-Type', /json/)
-      .expect('Content-Length', '15')
+      .expect('Content-Length', '2')
       .expect(200)
-      .end(function(err, res) {
-        if (err) throw err;
-      })
+      .expect((res) => { assert.deepEqual(res.body, []); done() })
+      .end((err, res) => { if (err) throw err })
   })
+
+  it('Create article', (done) => {
+    const payload = {
+      title: "test article",
+      content: "test content",
+      publicationDate: "2022-03-12T06:00:00.000Z"
+    }
+
+    request(app)
+      .post('/article')
+      .send(payload)
+      .expect(201)
+      .expect((res) => {
+        assert('_id' in res.body)
+        assert.include(res.body, payload)
+        done()
+      })
+      .end((err, res) => { if (err) throw err })
+  })
+
 })
