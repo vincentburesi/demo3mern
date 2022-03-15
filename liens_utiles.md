@@ -44,7 +44,23 @@ Technos
 
 ### [TODO]{.todo .TODO} Tests {#tests}
 
-### [TODO]{.todo .TODO} Websockets / Socket.io {#websockets-socket.io}
+### Websockets / Socket.io
+
+Rarement utilisé tel quel, il est préférable d\'utiliser une lib qui fait la gestion fastidieuse à votre place (par exemple socket.io en JS)
+
+1.  Websocket
+
+    <https://fr.wikipedia.org/wiki/WebSocket> - Article wikipédia présentant la techno
+
+    <https://developer.mozilla.org/fr/docs/Web/API/WebSockets_API> - Présentation de l\'API WebSocket
+
+    <https://datatracker.ietf.org/doc/html/rfc6455> - La RFC officielle (Pas une ressource pédagogique !)
+
+2.  Socket.io
+
+    <https://socket.io/> - Site officiel
+
+    <https://socket.io/get-started/chat> - Getting started, exemple classique du chat dynamique
 
 ### [TODO]{.todo .TODO} Heroku (Déploiement) {#heroku-déploiement}
 
@@ -83,6 +99,8 @@ Sécurité
 
 <https://www.wawasensei.dev/tuto/tuto-authentification-refresh-json-web-token-en-nodejs-avec-express> - Un autre tuto dans le même esprit
 
+<https://jwt.io/#debugger-io> - Debugger JWT (encode et decode des tokens)
+
 <https://datatracker.ietf.org/doc/html/rfc7519> - La RFC officielle (Pas une ressource pédagogique !)
 
 ### BCrypt
@@ -92,6 +110,8 @@ Permet de stocker et comparer uniquement des hash (et jamais des mots de passe e
 <https://fr.wikipedia.org/wiki/Bcrypt> - Article wikipedia
 
 <https://www.npmjs.com/package/bcrypt> - Le package npm qui l\'implémente
+
+<https://github.com/kelektiv/node.bcrypt.js#usage> - La doc du passage en question
 
 ### OAuth 2.0
 
