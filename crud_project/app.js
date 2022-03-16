@@ -4,7 +4,7 @@ import bodyParser from 'body-parser'
 import argv from './arguments.js'
 import db from './db.js'
 import auth_module from './auth_module.js'
-import { User, Comment, Article } from './schemas.js'
+import { User, Comment, Article } from './schemas/schemas.js'
 
 const app = express()
 

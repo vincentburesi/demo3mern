@@ -2,11 +2,14 @@ import mongoose from 'mongoose'
 import argv from './arguments.js'
 
 // Connecting to database
-mongoose.connect(argv.db)
-const db = mongoose.connection
+console.log("Connecting to mongoDB...")
+await mongoose.connect(argv.db)
+console.log("Connected")
 
 // Handling mongoose DB Events (printing to log)
-db.once('open', () => { console.log("Connected to mongoDB") })
-db.on('error', (err) => { console.log(err) })
+mongoose.connection.on('error', (err) => {
+  console.log(err)
+})
 
+const db = mongoose.connection.db
 export default db

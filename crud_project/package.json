@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon index.js --env=dev --db=\"mongodb+srv://dbuser:supinfo@cluster0.kgu0c.mongodb.net/crud_dev?retryWrites=true&w=majority\"",
     "prod": "node index.js --env=prod --db=\"mongodb+srv://dbuser:supinfo@cluster0.kgu0c.mongodb.net/crud_prod?retryWrites=true&w=majority\"",
-    "test": "mocha test --timeout=10000 --exit --env=test --db=\"mongodb+srv://dbuser:supinfo@cluster0.kgu0c.mongodb.net/crud_test?retryWrites=true&w=majority\""
+    "test": "mocha ./test.js --timeout=10000 --exit --env=test --db=\"mongodb+srv://dbuser:supinfo@cluster0.kgu0c.mongodb.net/crud_test?retryWrites=true&w=majority\""
   },
   "keywords": [
     "CRUD",
